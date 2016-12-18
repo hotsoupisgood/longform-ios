@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
-
+    var shuffle = Shuffle()
+    
+    //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        shuffle.getRandomPodcast()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: Outlet
+    @IBAction func playButtonPress(_ sender: UIButton) {
+        shuffle.play()
     }
-
-
 }
 
