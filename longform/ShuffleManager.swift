@@ -10,18 +10,22 @@ import Foundation
 import Alamofire
 import AVFoundation
 class Shuffle: NSObject {
-    var currentPodcast: NSDictionary = [:]
-    
+    var currentPodcast = NSDictionary()
+    var player = AVPlayer()
     func play() {
-        let locationString = currentPodcast["location"] as! String
-        print(locationString)
-        let location = URL(string: locationString)
-
-        let playerItem = AVPlayerItem(url: location!)
-        
-        let player = AVPlayer(playerItem:playerItem)
-        player.volume = 1.0
-        player.play()
+        if let locationString = currentPodcast["location"] {
+            print(locationString)
+            let location = URL(string: locationString as! String)
+            let playerItem = AVPlayerItem(url: location!)
+            
+            player = AVPlayer(playerItem:playerItem)
+            player.volume = 1.0
+            player.play()
+            print(player.status)
+        }
+        else{
+            print("failed")
+        }
     }
     
     func getRandomPodcast() {
