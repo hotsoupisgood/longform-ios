@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     }
     @IBAction func pausButtonPress(_ sender: UIButton) {
         shuffle.pause()
+        
     }
     @IBAction func playButtonPress(_ sender: UIButton) {
         shuffle.play()

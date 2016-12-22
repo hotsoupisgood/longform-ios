@@ -39,8 +39,7 @@ class Shuffle: NSObject {
                 let location = URL(string: locationString as! String)
                 let playerItem = AVPlayerItem(url: location!)
                     
-                self.player = AVPlayer(playerItem:playerItem)
-                
+                self.player.replaceCurrentItem(with: playerItem)
             }
         }
     }
