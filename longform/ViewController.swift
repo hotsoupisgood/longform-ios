@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     
     //MARK: Properties
 
-    @IBOutlet weak var podcastTitleLabel: UILabel!
     @IBOutlet weak var podcastDescriptionTextView: UITextView!
+    @IBOutlet weak var podcastTitleLabel: UILabel!
+//    @IBOutlet weak var podcastTitleLabel: UILabel!
+//    @IBOutlet weak var podcastDescriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
